@@ -43,4 +43,11 @@ public class JobPostController {
         JobPost updateJob = jobPostService.updateJob(jobPost);
         return new ResponseEntity<>(updateJob, HttpStatus.OK);
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteJob(@PathVariable("id") Long jobId) {
+        jobPostService.deleteJob(jobId);
+
+        return new ResponseEntity<>("Job successfully deleted", HttpStatus.OK);
+    }
 }

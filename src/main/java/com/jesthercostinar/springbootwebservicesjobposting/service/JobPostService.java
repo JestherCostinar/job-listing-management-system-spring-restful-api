@@ -10,4 +10,5 @@ public interface JobPostService {
     JobPost getJobById(Long id);
     List<JobPost> getAllJobs();
     JobPost updateJob(JobPost jobPost);
+    void deleteJob(Long id);
 }

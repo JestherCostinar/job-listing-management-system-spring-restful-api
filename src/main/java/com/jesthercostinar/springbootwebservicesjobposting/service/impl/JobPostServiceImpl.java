@@ -47,4 +47,9 @@ public class JobPostServiceImpl implements JobPostService {
         JobPost updatedJob = jobPostRepository.save(currentJob);
         return updatedJob;
     }
+
+    @Override
+    public void deleteJob(Long id) {
+        jobPostRepository.deleteById(id);
+    }
 }
