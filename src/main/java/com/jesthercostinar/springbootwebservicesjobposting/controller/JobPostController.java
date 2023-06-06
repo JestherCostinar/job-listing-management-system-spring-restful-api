@@ -20,8 +20,10 @@ public class JobPostController {
         return new ResponseEntity<>(saveJobPost, HttpStatus.CREATED);
     }
 
-    @GetMapping("/hello-world")
-    public String sayHello() {
-        return "Hello";
+    @GetMapping("{id}")
+    public ResponseEntity<JobPost> getJobById(@PathVariable("id") Long id) {
+        JobPost jobPost = jobPostService.getJobById(id);
+
+        return new ResponseEntity<>(jobPost, HttpStatus.OK);
     }
 }
