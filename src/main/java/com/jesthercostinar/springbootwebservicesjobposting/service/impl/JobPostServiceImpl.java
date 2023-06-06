@@ -6,6 +6,7 @@ import com.jesthercostinar.springbootwebservicesjobposting.service.JobPostServic
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,5 +23,11 @@ public class JobPostServiceImpl implements JobPostService {
     public JobPost getJobById(Long id) {
         Optional<JobPost> job = jobPostRepository.findById(id);
         return job.get();
+    }
+
+    @Override
+    public List<JobPost> getAllJobs() {
+        List<JobPost> jobs = jobPostRepository.findAll();
+        return jobs;
     }
 }

@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/jobs")
 @AllArgsConstructor
@@ -25,5 +27,12 @@ public class JobPostController {
         JobPost jobPost = jobPostService.getJobById(id);
 
         return new ResponseEntity<>(jobPost, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<JobPost>> getAllJobs() {
+        List<JobPost> jobs = jobPostService.getAllJobs();
+
+        return new ResponseEntity<>(jobs, HttpStatus.OK);
     }
 }
