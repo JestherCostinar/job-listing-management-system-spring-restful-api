@@ -8,6 +8,6 @@ import java.util.Optional;
 public interface JobPostService {
     JobPost createJob(JobPost jobPost);
     JobPost getJobById(Long id);
-
     List<JobPost> getAllJobs();
+    JobPost updateJob(JobPost jobPost);
 }

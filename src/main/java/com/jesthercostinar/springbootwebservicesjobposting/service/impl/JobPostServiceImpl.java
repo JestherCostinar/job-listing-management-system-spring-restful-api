@@ -30,4 +30,21 @@ public class JobPostServiceImpl implements JobPostService {
         List<JobPost> jobs = jobPostRepository.findAll();
         return jobs;
     }
+
+    @Override
+    public JobPost updateJob(JobPost jobPost) {
+        JobPost currentJob = jobPostRepository.findById(jobPost.getId()).get();
+
+        currentJob.setName(jobPost.getName());
+        currentJob.setDescription(jobPost.getDescription());
+        currentJob.setSalary(jobPost.getSalary());
+        currentJob.setYearsOfExpertise(jobPost.getYearsOfExpertise());
+        currentJob.setCompanyName(jobPost.getCompanyName());
+        currentJob.setLocation(jobPost.getLocation());
+        currentJob.setCompanNameHidden(jobPost.isCompanNameHidden());
+        currentJob.setActive(jobPost.isActive());
+
+        JobPost updatedJob = jobPostRepository.save(currentJob);
+        return updatedJob;
+    }
 }
