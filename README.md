@@ -1,4 +1,5 @@
 <h1 style="color: #FF0000;" align="center">JOB LISTING MANAGEMENT SYSTEM</h1>
+<h6 style="color: #FF0000;" align="center"><a href="http://localhost:8080/swagger-ui/index.html#/">REST API Documentation</a></h6>
 
 
 ## 💾 Technologies & Framework
